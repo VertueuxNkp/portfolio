@@ -1,0 +1,1 @@
+Sur desktop, tout s'affiche mais sur mobile la barre de menus est masqué et remplacé par le menu hambuger
