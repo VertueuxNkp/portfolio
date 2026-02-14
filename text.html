@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Mon Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* RESET & BASE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 40px 30px;
+        }
+        
+        /* HEADER */
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .page-title {
+            font-size: 2.8rem;
+            color: #2d2d2d;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .page-title::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, #4a90e2, #10b981);
+            bottom: -10px;
+            left: 20%;
+            border-radius: 2px;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 20px auto 0;
+        }
+        
+        /* LAYOUT 3 COLONNES */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1.8fr 1.2fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 1000px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        /* ===== COLONNE 1 : INFOS CONTACT ===== */
+        .info-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            height: fit-content;
+            border-left: 5px solid #4a90e2;
+        }
+        
+        .info-card h3 {
+            font-size: 1.5rem;
+            color: #2d2d2d;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+        }
+        
+        .info-icon {
+            background: #f0f7ff;
+            color: #4a90e2;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        
+        .info-details h4 {
+            color: #333;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .info-details p, .info-details a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.2s;
+            line-height: 1.5;
+        }
+        
+        .info-details a:hover {
+            color: #4a90e2;
+        }
+        
+        /* Disponibilités */
+        .availability {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 10px;
+        }
+        
+        .availability h4 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #2d2d2d;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .days {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .day {
+            background: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #4a90e2;
+            border: 1px solid #d1e3ff;
+        }
+        
+        .hours {
+            background: #e9f2ff;
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+            color: #4a90e2;
+            font-weight: 600;
+        }
+        
+        /* ===== COLONNE 2 : FORMULAIRE ===== */
+        .form-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .form-card h3 {
+            font-size: 1.6rem;
+            color: #2d2d2d;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #eaeaea;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background: #fafafa;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #4a90e2;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.1);
+        }
+        
+        .btn-submit {
+            background: linear-gradient(90deg, #4a90e2, #5fa3ff);
+            color: white;
+            padding: 16px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(74, 144, 226, 0.3);
+        }
+        
+        /* ===== COLONNE 3 : RAISONS DE CONTACT ===== */
+        .reasons-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            height: fit-content;
+            border-left: 5px solid #10b981;
+        }
+        
+        .reasons-card h3 {
+            font-size: 1.5rem;
+            color: #2d2d2d;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .reasons-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .reason-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            background: #f9f9f9;
+            border-radius: 14px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .reason-item:hover {
+            background: #f0f7ff;
+            transform: translateX(5px);
+        }
+        
+        .reason-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+        
+        .reason-text h4 {
+            color: #2d2d2d;
+            margin-bottom: 4px;
+            font-size: 1.05rem;
+        }
+        
+        .reason-text p {
+            color: #666;
+            font-size: 0.85rem;
+        }
+        
+        /* Badge réponse rapide */
+        .quick-response {
+            background: linear-gradient(135deg, #fff8e7, #fff);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 30px;
+            border-left: 4px solid #f59e0b;
+        }
+        
+        .quick-response h4 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #2d2d2d;
+            margin-bottom: 10px;
+        }
+        
+        .quick-response p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .response-time {
+            display: inline-block;
+            background: #f59e0b;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1000px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            .page-title {
+                font-size: 2.2rem;
+            }
+            
+            .form-card {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- En-tête -->
+        <header class="page-header">
+            <h1 class="page-title">Me contacter</h1>
+            <p class="page-subtitle">Discutons de votre projet ! Je suis à votre disposition pour échanger et collaborer.</p>
+        </header>
+        
+        <!-- Grille 3 colonnes -->
+        <div class="contact-grid">
+            
+            <!-- COLONNE 1 : Infos contact + Disponibilités -->
+            <div class="info-card">
+                <h3><i class="fas fa-address-card"></i> Mes coordonnées</h3>
+                
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-pin"></i>
+                        </div>
+                        <div class="info-details">
+                            <h4>Adresse</h4>
+                            <p>123 Rue de la Technologie<br>75001 Paris, France</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-details">
+                            <h4>Téléphone</h4>
+                            <a href="tel:+33612345678">+33 6 12 34 56 78</a>
+                            <p style="font-size: 0.9rem;">Disponible 9h-18h</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-details">
+                            <h4>Email</h4>
+                            <a href="mailto:ton.email@example.com">ton.email@example.com</a>
+                            <p style="font-size: 0.9rem;">Réponse sous 24h</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="info-details">
+                            <h4>Site web</h4>
+                            <a href="https://tonportfolio.com" target="_blank">tonportfolio.com</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Disponibilités -->
+                <div class="availability">
+                    <h4><i class="fas fa-clock"></i> Mes disponibilités</h4>
+                    <div class="days">
+                        <span class="day">Lundi</span>
+                        <span class="day">Mardi</span>
+                        <span class="day">Mercredi</span>
+                        <span class="day">Jeudi</span>
+                        <span class="day">Vendredi</span>
+                    </div>
+                    <div class="hours">
+                        <i class="fas fa-hourglass-half"></i> 9h00 - 18h00
+                    </div>
+                    <p style="color: #666; margin-top: 15px; font-size: 0.9rem; font-style: italic;">
+                        <i class="fas fa-check-circle" style="color: #10b981;"></i> Disponible aussi le samedi sur rendez-vous
+                    </p>
+                </div>
+            </div>
+            
+            <!-- COLONNE 2 : FORMULAIRE DE CONTACT -->
+            <div class="form-card">
+                <h3><i class="fas fa-paper-plane"></i> Envoyez-moi un message</h3>
+                
+                <form action="#" method="post">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="prenom">Prénom</label>
+                            <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nom">Nom</label>
+                            <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sujet">Sujet</label>
+                        <select id="sujet" name="sujet" required>
+                            <option value="" disabled selected>-- Choisissez un sujet --</option>
+                            <option value="aide">Aide / Support technique</option>
+                            <option value="discussion">Discussion / Échange</option>
+                            <option value="logiciel">Création de logiciel</option>
+                            <option value="stage">Opportunité de stage</option>
+                            <option value="collaboration">Collaboration / Projet</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Bonjour, je vous contacte pour..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-paper-plane"></i> Envoyer le message
+                    </button>
+                    
+                    <p style="text-align: center; color: #777; font-size: 0.85rem; margin-top: 20px;">
+                        <i class="fas fa-lock" style="color: #4a90e2;"></i> Vos données sont confidentielles
+                    </p>
+                </form>
+            </div>
+            
+            <!-- COLONNE 3 : RAISONS DE CONTACT -->
+            <div class="reasons-card">
+                <h3><i class="fas fa-comment-dots"></i> Pourquoi me contacter ?</h3>
+                
+                <div class="reasons-list">
+                    <div class="reason-item">
+                        <div class="reason-icon" style="color: #4a90e2;">
+                            <i class="fas fa-life-ring"></i>
+                        </div>
+                        <div class="reason-text">
+                            <h4>Aide & Support technique</h4>
+                            <p>Questions techniques, dépannage, conseils</p>
+                        </div>
+                    </div>
+                    
+                    <div class="reason-item">
+                        <div class="reason-icon" style="color: #10b981;">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="reason-text">
+                            <h4>Création de logiciel</h4>
+                            <p>Développement sur mesure, applications web/mobile</p>
+                        </div>
+                    </div>
+                    
+                    <div class="reason-item">
+                        <div class="reason-icon" style="color: #f59e0b;">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="reason-text">
+                            <h4>Projet & Collaboration</h4>
+                            <p>Travailler ensemble sur un projet innovant</p>
+                        </div>
+                    </div>
+                    
+                    <div class="reason-item">
+                        <div class="reason-icon" style="color: #e74c3c;">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="reason-text">
+                            <h4>Stage / Alternance</h4>
+                            <p>Opportunités professionnelles dans le réseau</p>
+                        </div>
+                    </div>
+                    
+                    <div class="reason-item">
+                        <div class="reason-icon" style="color: #9b59b6;">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <div class="reason-text">
+                            <h4>Simple discussion</h4>
+                            <p>Échanger autour des technologies, café virtuel</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Temps de réponse -->
+                <div class="quick-response">
+                    <h4><i class="fas fa-bolt"></i> Réponse rapide</h4>
+                    <p>Je m'engage à répondre à tous vos messages dans les plus brefs délais.</p>
+                    <span class="response-time"><i class="fas fa-clock"></i> Délai moyen : &lt; 24h</span>
+                </div>
+                
+                <!-- Réseaux sociaux rapides -->
+                <div style="margin-top: 25px; text-align: center;">
+                    <p style="color: #666; margin-bottom: 10px;">Ou retrouvez-moi sur :</p>
+                    <div style="display: flex; justify-content: center; gap: 15px;">
+                        <a href="#" style="background: #0077b5; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" style="background: #333; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s;"><i class="fab fa-github"></i></a>
+                        <a href="#" style="background: #1da1f2; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s;"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Carte/Plan (optionnel) -->
+        <div style="margin-top: 60px; background: white; border-radius: 20px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div style="background: #f0f7ff; padding: 15px; border-radius: 50%; color: #4a90e2;">
+                    <i class="fas fa-map-marked-alt fa-2x"></i>
+                </div>
+                <div>
+                    <h4 style="color: #2d2d2d; margin-bottom: 5px;">Basé à [Ta Ville]</h4>
+                    <p style="color: #666;">Disponible en télétravail et déplacements en Île-de-France</p>
+                </div>
+            </div>
+            <div style="color: #4a90e2; font-weight: 600;">
+                <i class="fas fa-check-circle"></i> Disponible immédiatement
+            </div>
+        </div>
+    </div>
+</body>
+</html>

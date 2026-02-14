@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compétences - M. Vertueux NOUKPO</title>
+    <title>Contact - M. Vertueux NOUKPO</title>
     <link rel="icon" href="../images/icone/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/styleDesktop.css">
     <link rel="stylesheet" href="../css/styleMobile.css">
     <link rel="stylesheet" href="../css/styleTablette.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -46,20 +47,209 @@
 
     <main>
 
-        <section>
-            
+        <section class="reveal-block" id="presentationCompetence">
+            <h3>Contactez-moi</h3>
+            <p>Discutons de votre projet ! Je suis à votre disposition pour échanger et collaborer.</p>
         </section>
 
-        <section id="projetPersonnel">
-            <div class="">
+        <section id="formulaireEtContact">
+            <div class="row">
+                <div id="coordonnees">
+                    <div class="titre">
+                        <h3><i class="fas fa-address-card"></i> Mes coordonnées</h3>
+                    </div>
 
+                    <div class="contenuCoordonnees">
+                        <div class="iconeTexte">
+                            <div class="icone">
+                                <i class="fas fa-map-pin"></i>
+                            </div>
+                            <div class="texte">
+                                <h4>Adresse</h4>
+                                <p>Cotonou, Bénin</p>
+                            </div>
+                        </div>
+
+                        <div class="iconeTexte">
+                            <div class="icone">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="texte">
+                                <h4>Téléphones</h4>
+                                <a href="https://wa.me/54712901">+229 01 54 71 29 01</a> <br> <a href="https://wa.me/43221941">+229 01 43 22 19 41</a>
+                            </div>
+                        </div>
+
+                        <div class="iconeTexte">
+                            <div class="icone">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="texte">
+                                <h4>Email</h4>
+                                <a href="mailto:vertueuxnoukponkp@gmail.com">vertueuxnoukponkp@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="iconeTexte">
+                            <div class="icone">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="texte">
+                                <h4>Réseaux Sociaux</h4>
+                                <p>Voir bas de page</p>
+                            </div>
+                        </div>
+
+                        <div class="iconeDispo">
+                            <div class="titreDispo">
+                                <h5><i class="fas fa-clock"></i>Mes Disponibilités</h5>
+                            </div>
+                            <div class="texte">
+                                <span class="day">Lundi</span>
+                                <span class="day">Mardi</span>
+                                <span class="day">Mercredi</span>
+                                <span class="day">Jeudi</span>
+                                <span class="day">Vendredi</span>
+                            </div>
+                            <div class="heure">
+                                <i class="fas fa-hourglass-half"></i> 9h00 - 22h00
+                            </div>
+                            <div class="dispoRendez">
+                                <p>
+                                    <i class="fas fa-check-circle" style="color: #10b981;"></i> Disponible aussi les samedis et dimanches sur rendez-vous
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+
+                <div id="formulaire">
+                    <div class="titre">
+                        <h3><i class="fas fa-paper-plane"></i> Envoyez-moi un message</h3>
+                    </div>
+
+                    <div class="contenuCoordonnees"> 
+                        <form action="#" method="post">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="prenom">Prénom</label>
+                                    <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nom">Nom</label>
+                                    <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="sujet">Sujet</label>
+                                <select id="sujet" name="sujet" required>
+                                    <option value="" disabled selected>-- Choisissez un sujet --</option>
+                                    <option value="aide">Aide / Support technique</option>
+                                    <option value="discussion">Discussion / Échange</option>
+                                    <option value="logiciel">Création de logiciel</option>
+                                    <option value="stage">Opportunité de stage</option>
+                                    <option value="collaboration">Collaboration / Projet</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="8" placeholder="Bonjour, je vous contacte pour..." required></textarea>
+                            </div>
+                            
+                            <div class="btnEnvoi">
+                                <button type="submit" class="btn-submit">
+                                    <i class="fas fa-paper-plane"></i> Envoyer le message
+                                </button>
+                            </div>
+                            
+                            <p style="text-align: center; color: #777; font-size: 0.85rem; margin-top: 20px;">
+                                <i class="fas fa-lock" style="color: #4a90e2;"></i> Vos données sont confidentielles
+                            </p>
+                        </form>
+                    </div>
+                </div>
+                
+                <div id="raisons">
+                    <div class="titre">
+                        <h3><i class="fas fa-comment-dots"></i>Pourquoi me contacter ?</h3>
+                    </div>
+
+                    <div class="contenuRaison">
+                        <div class="reasons-list">
+                            <div class="reason-item">
+                                <div class="reason-icon" style="color: #4a90e2;">
+                                    <i class="fas fa-life-ring"></i>
+                                </div>
+                                <div class="reason-text">
+                                    <h4>Aide & Support technique</h4>
+                                    <p>Questions techniques, dépannage, conseils</p>
+                                </div>
+                            </div>
+                            
+                            <div class="reason-item">
+                                <div class="reason-icon" style="color: #10b981;">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="reason-text">
+                                    <h4>Création de logiciel</h4>
+                                    <p>Développement sur mesure, applications web basiques</p>
+                                </div>
+                            </div>
+                            
+                            <div class="reason-item">
+                                <div class="reason-icon" style="color: #f59e0b;">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <div class="reason-text">
+                                    <h4>Projet & Collaboration</h4>
+                                    <p>Travailler ensemble sur un projet innovant</p>
+                                </div>
+                            </div>
+                            
+                            <div class="reason-item">
+                                <div class="reason-icon" style="color: #e74c3c;">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <div class="reason-text">
+                                    <h4>Stage / Alternance</h4>
+                                    <p>Opportunités professionnelles dans le réseau</p>
+                                </div>
+                            </div>
+                            
+                            <div class="reason-item">
+                                <div class="reason-icon" style="color: #9b59b6;">
+                                    <i class="fas fa-coffee"></i>
+                                </div>
+                                <div class="reason-text">
+                                    <h4>Simple discussion</h4>
+                                    <p>Échanger autour des technologies, café virtuel</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Temps de réponse -->
+                        <div class="timeResponse">
+                            <div class="quick-response">
+                                <h4><i class="fas fa-bolt"></i> Réponse rapide</h4>
+                                <p>Je m'engage à répondre à tous vos messages dans les plus brefs délais.</p>
+                                <span class="response-time"><i class="fas fa-clock"></i> Délai moyen : &lt; 24h</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
     </main>
 
-   
-    <!--
     <footer>
         <div class="ligneFooter">
             <div class="colFooter" id="texteFooter">
@@ -117,7 +307,7 @@
         <div id="copywrite">
             <p>2026 Mahukpégo Vertueux Noukpo. Tous droits réservés.</p>
         </div>
-    </footer>-->
+    </footer>
     
     
     <script src="../js/index.js"></script>

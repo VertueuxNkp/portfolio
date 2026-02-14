@@ -18,6 +18,25 @@ body{
     background-color: var(--light-color);
 }
 
+input, select, textarea{
+    border: 2px solid #eaeaea;
+    border-radius: 10px;
+    font-size: 0.9em;
+    padding: 0 10px;
+    background: #fafafa;
+    transition: all 0.3s;
+}
+
+input, select{
+    height: 40px;                                
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #4a90e2;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.1);
+}
+
 .reveal-block {
   opacity: 0;
   transform: translateY(40px); /* Légèrement décalé vers le bas */
@@ -238,9 +257,15 @@ a{
                 }
 
                 img{
-                    padding: 20px 0px;
                     width: 75px;
                     height: 75px;
+                    padding: 20px 0px;
+                }
+
+                i{
+                    padding: 20px 0px;
+                    font-size: 70px;
+                    color: var(--primary-color);
                 }
             }
 
@@ -389,6 +414,8 @@ a{
         h3{
             font-size: 2.3em;
             margin-bottom: 30px;
+            padding: 0px 50px;
+            text-align: center;
         }
         
         p{
@@ -611,5 +638,587 @@ a{
             }
         }
     }
-      
+
+    /*--------------EDUCATION----------------------*/
+
+    #parcoursAcademique{
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        .parcours{
+            padding-top: 50px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .row{
+                margin-bottom: 25px;
+                padding: 50px;
+                width: 60%;
+                background-color: #fff;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+                border-radius: 15px;
+                border-left: 5px solid var(--primary-color);
+
+                .annee{
+                    margin-bottom: 25px;
+                    span{
+                        background-color: var(--primary-color);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: #fff;
+                        font-weight: bold;
+                        height: 35px;
+                        border-radius: 15px;
+                        width: 150px;
+                        
+                    }
+                }
+
+                .niveau{
+
+                    h5{
+                        font-size: 1.6em;
+                    }
+                }
+
+                .ecole{
+                    margin-bottom: 15px;
+                    h6{
+                        font-size: 1.3em;
+                        color: var(--primary-color);
+                    }
+                }
+
+                .cours{
+                    margin-bottom: 15px;
+                }
+
+                .cours, .realisation{
+
+                    h6{
+                        font-size: 1.2em;
+                    }
+
+                    ul{
+                        padding-left: 25px;
+                        li{
+                            list-style: disc;
+                        }
+                    }
+                }
+            }
+
+            .row:hover{
+                transform: scale(1.02);
+                transition: 0.5s;
+            }
+        }
+    }  
+
+    #formationComplementaire{
+
+        h3{
+            font-size: 1.9em;
+            padding-top: 25px;
+            padding-left: 5%;
+        }
+
+        .contenuFormations{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            .row{
+                display: flex;
+                flex-wrap: wrap;
+                width: 90%;
+                justify-content: space-between;
+                padding: 50px 0;
+
+                .formation{
+                    background-color: #fff;
+                    width: 32%;
+                    border-radius: 15px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .imgFormation{
+
+                        i{
+                           font-size: 50px;
+                           color: var(--primary-color);
+                           padding: 15px 0;
+                        }
+                    }
+
+                    .descriptionFormation{
+                        display:flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        h5{
+                            text-align: center;
+                            font-size: 1.3em;
+                            margin-bottom: 15px;
+                        }
+
+                        p{
+                            padding: 0 25px;
+                            margin-bottom: 20px;
+                            font-size: 0.9em;
+                            text-align: center;
+                        }
+
+                        span{
+                            margin-bottom: 15px;
+                            font-size: 0.8em;
+                            text-align: center;
+                            color: #94a3b8;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /*--------------A PROPOS---------------------*/
+    #maPresentation{
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+
+        .row{
+            padding: 50px 70px;
+            display: flex;
+            justify-content: space-between;
+            height: 715px;
+
+            .textePresentation{
+                width: 48%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-color: #fff;
+                border-radius: 50px;
+                border-left: 5px solid var(--primary-color);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+                h3{
+                    font-size: 2.3em;
+                    padding: 15px 50px;
+
+                    span{
+                        color: var(--primary-color);
+                    }
+                }
+
+                p{
+                    padding: 0px 50px;
+                    padding-bottom: 15px;
+                }
+            }
+
+            .imgEtContact{
+                width: 48%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+
+                .imgPresentation{
+                    height: 40%;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #fff;
+                    border-radius: 50px;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+                    img{
+                        width: 160px;
+                        height: 160px;
+                        border-radius: 100%;
+                    }
+
+                    h4{
+                        padding-top: 15px;
+                        text-align: center;
+                    }
+                }
+
+                .contact{
+                    height: 55%;
+                    width: 100%;
+                    border-radius: 50px;
+                    background-color: #fff;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);    
+                    
+
+                    .texteImageContact{
+                        display: flex;
+                        align-items: center;
+                        padding: 0 50px;
+                        
+                        .imgContact{
+                            background-color: #f0f7ff;
+                            width: 30px;
+                            height: 30px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 10px;
+                            margin-right: 20px;
+                            img{
+                                width: 15px;
+                                height: 15px;
+                            }
+                        }
+
+                        .texteContact{
+                            border-bottom: 1px solid var(--text-color);
+                            
+
+                            a{
+                                color: var(--text-color);
+                            }
+
+                            p, a{
+                                font-size: 0.7em;
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #philosophie, #passion{
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        .row{
+            padding: 50px 60px;
+
+            .titrePhilosophie{
+                margin-bottom: 25px;
+                h3{
+                    font-size: 2.5em;
+                }
+            }
+            
+            .contenuPhilosophie{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                
+                .casePhilosophie{
+                    width: 23%;
+                    background-color: #fff;
+                    border-radius: 15px;
+
+                    h4{
+                        padding: 50px 30px 20px 30px;                        
+                        text-align: center;
+                        font-size: 1.3em;
+                    }
+
+                    p{
+                        text-align: center;
+                        padding: 0 10px 10px 10px;
+                    }
+                }
+
+                .caseLoisirs{
+                    width: 23%;
+                    background-color: #fff;
+                    border-radius: 15px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    h4{
+                        font-size: 1.3em;
+                        padding: 0px 25px 25px 25px;
+                    }
+
+                    img{
+                        width: 80px;
+                        height: 80px;
+                        padding: 25px 25px 25px 25px;
+                    }
+                }
+            }
+        }
+    }
+
+    /*------------CONTACT-----------*/
+
+    #formulaireEtContact{
+
+        .row{
+            display: flex;
+            padding: 50px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            
+            #coordonnees{
+                background-color: #fff;
+                width: 28%;
+                border-radius: 25px;
+                border-left: 5px solid var(--accent-color);
+
+                .titre{    
+                    display: flex;
+                    padding: 30px 30px 30px 25px;
+                    font-size: 1.3em;
+                    
+                    h3{
+                        text-align: center;
+                        border-bottom: 2px solid #f0f0f0;
+                        i{
+                            margin-right: 10px;
+                        }
+
+                    }
+                }
+
+                .contenuCoordonnees{
+                    padding: 0px 30px 30px 25px;
+                    flex-direction: column;
+
+                    .iconeTexte{
+                        display: flex;
+
+                        .icone{
+                            margin-right: 15px;
+                            display: flex;
+                            margin-bottom: 50px;
+                            i{
+                                background: #f0f7ff;
+                                border-radius: 15px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                color: #4a90e2;
+                                width: 40px;
+                                height: 40px;
+                            }
+                        }
+
+                        .texte{
+                            p,a{
+                                font-size: 0.8em;
+                                color: var(--text-color);
+                            }
+
+                            a{
+                                word-break: break-word;
+                                overflow-wrap: break-word;
+                            }
+                        }
+                    }
+
+                    .iconeDispo{
+                        display: flex;
+                        flex-direction: column;
+                        background-color: #f8fafc;
+                        padding: 20px;
+                        border-radius: 15px;
+
+                        .titreDispo{
+                            margin-bottom: 15px;
+                            h5{
+                                font-size: 1.2em;
+                                
+                                i{
+                                    margin-right: 10px;
+                                }
+                            }
+                        }
+
+                        .texte{
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 10px;
+                            margin-bottom: 15px;
+
+                            span{
+                                background: white;
+                                padding: 6px 14px;
+                                border-radius: 20px;
+                                font-size: 0.85rem;
+                                font-weight: 500;
+                                color: #4a90e2;
+                                border: 1px solid #d1e3ff;
+                            }
+                        }
+
+                        .heure{
+                            background: #e9f2ff;
+                            padding: 12px;
+                            border-radius: 15px;
+                            text-align: center;
+                            color: #4a90e2;
+                            font-weight: 600;
+                            margin-top: 15px;
+                            margin-bottom: 15px;
+                        }
+
+                        .dispoRendez{
+                            font-size: 0.7em;
+                            font-style: italic;
+                        }
+                    }
+                }
+            }
+
+            #formulaire{
+                background-color: #fff;
+                width: 40%;
+                border-radius: 25px;
+                .titre{
+                    font-size: 1.3em;
+                    padding: 30px 30px 30px 35px;
+
+                    i{
+                        margin-right: 10px;
+                    }
+                }
+
+                form{
+                    padding: 0px 30px 30px 35px;
+
+                    
+
+                    .form-row{
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+
+                        .form-group{
+                            margin-bottom: 35px;
+
+                        }
+                    }
+
+                    .form-group{
+                        display: flex;
+                        flex-direction: column;
+                        margin-bottom: 35px;
+
+                        textarea{
+                            padding: 15px;
+                            font-size: 1.3em;
+                        }
+                    }
+
+                    .btnEnvoi{
+                        display: flex;
+                        justify-content: center;
+
+                        button{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 1.2em;
+                            background-color: #4a90e2;
+                            width: 60%;
+                            height: 50px;
+                            color: #fff;
+                            border: none;
+                            border-radius: 25px;
+
+                            i{
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #raisons{
+                background-color: #fff;
+                width: 25%;
+                border-radius: 25px;
+                border-left: 5px solid #10b981;
+
+                .titre{    
+                    display: flex;
+                    padding: 30px 30px 30px 25px;
+                    font-size: 1.3em;
+                    
+                    h3{
+                        border-bottom: 2px solid #f0f0f0;
+
+                        i{
+                            margin-right: 10px;
+                        }
+
+                    }
+                }
+
+                .contenuRaison{
+
+                    .reasons-list{
+                        padding: 0px 30px;
+                        display: flex;
+                        flex-direction: column;
+
+                        .reason-item{
+                            background-color: #fafafa;
+                            margin-bottom: 15px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 15px;
+                            border-radius: 15px;
+
+                            .reason-icon{
+                                background-color: #fff;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                margin-right: 15px;
+                                width: 55px;
+                                height: 35px;
+                                box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+                                border-radius: 12px;
+                            }
+
+                            .reason-text{
+                                h4{
+                                    font-size: 1.05rem;
+                                }
+
+                                p{             
+                                    font-size: 0.85rem;
+                                }
+                            }
+                        }
+
+
+                    }
+
+                    .timeResponse{
+                        padding: 0px 30px;
+                        padding-bottom: 15px;
+                        .quick-response {
+                            background: linear-gradient(135deg, #fff8e7);
+                            border-radius: 16px;
+                            padding: 20px;
+                            margin-top: 30px;
+                            border-left: 4px solid #f59e0b;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
