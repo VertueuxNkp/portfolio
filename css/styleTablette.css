@@ -556,9 +556,10 @@
                     align-items: center;
                     .imgFormation{
 
-                        img{
-                            width: 75px;
-                            height: 75px;
+                        i{
+                           font-size: 50px;
+                           color: var(--primary-color);
+                           padding: 15px 0;
                         }
                     }
 
